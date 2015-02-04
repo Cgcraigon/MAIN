@@ -35,7 +35,7 @@ samples=header.split('\t')[2:int(colnames['Gene title'])]
 probefields=['ID_REF','Gene ID']
 
 def buildrow(row, fields):
-   '''Creates a tab separated list of values according to the columns listed in fieldsrow: a list of values
+    '''Creates a tab separated list of values according to the columns listed in fieldsrow: a list of values
 	fields: a list of columns. Only the values in row corresponding to the columns in fields are output
 	returns: A string that is a tab separated list of values terminated with a newline
 	'''
@@ -47,7 +47,7 @@ def buildrow(row, fields):
 
 	#creates the rows for the expression file, is slightly different because for each probe and experiment there are several gene expression values.
 def build_expression(row, samples):
-	'''Builds tab separated rows for expression data. For each of the samples listed 
+    '''Builds tab separated rows for expression data. For each of the samples listed 
 	it generates a line with the probe id, sample id and expression value.
 	row: a list of values
 	samples: a list of column headings corresponding to the samples
@@ -63,6 +63,7 @@ def build_expression(row, samples):
 	
 #initialise a counter to count how many probe rows were processed.    
 #writes the data to the files 
+rows=0
 for line in fh.readlines():
     try:
         if line[0]=='!':
@@ -71,8 +72,8 @@ for line in fh.readlines():
         genefile.write(buildrow(row, genefields))
         probefile.write(buildrow(row,probefields))
         expressionfile.write(build_expression(row, samples))
-        rows=rows+1	
-   except:
+        rows=rows+1
+    except:
 		pass
 genefile.close()
 probefile.close()
