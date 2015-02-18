@@ -1,0 +1,51 @@
+GSM520665	MRC-5
+GSM520666	MRC-5
+GSM520667	MRC-5
+GSM520704	human placental artery-derived endothelial (hPAE) cell	16
+GSM520705	human placental artery-derived endothelial (hPAE) cell	16
+GSM520711	human placental artery-derived endothelial (hPAE) cell	16
+GSM520692	human uterine endometrium (hUtE) cell	8
+GSM520693	human uterine endometrium (hUtE) cell	8
+GSM520694	human uterine endometrium (hUtE) cell	8
+GSM520689	human amniotic ectoderm and mesoderm layer (hAM) cell	10
+GSM520690	human amniotic ectoderm and mesoderm layer (hAM) cell	13
+GSM520691	human amniotic ectoderm and mesoderm layer (hAM) cell	13
+GSM520668	MRC-iPS-25 (Tic)	22
+GSM520669	MRC-iPS-25 (Tic)	22
+GSM520670	MRC-iPS-25 (Tic)	22
+GSM520713	PAE-iPS-11	18
+GSM520714	PAE-iPS-11	18
+GSM520715	PAE-iPS-11	18
+GSM520695	UtE-iPS-4	18
+GSM520696	UtE-iPS-4	18
+GSM520697	UtE-iPS-4	18
+GSM520709	UtE-iPS-4	27
+GSM520710	UtE-iPS-4	27
+GSM520712	UtE-iPS-4	27
+GSM520698	UtE-iPS-11	 13
+GSM520699	UtE-iPS-11	 13
+GSM520700	UtE-iPS-11	 13
+GSM520701	UtE-iPS-11	 18
+GSM520702	UtE-iPS-11	 18
+GSM520703	UtE-iPS-11	 18
+GSM520671	AM-iPS-3 (Sage)	7
+GSM520672	AM-iPS-3 (Sage)	7
+GSM520673	AM-iPS-3 (Sage)	7
+GSM520681	AM-iPS-5 (Chives)	7
+GSM520682	AM-iPS-5 (Chives)	7
+GSM520680	AM-iPS-5 (Chives)	8
+GSM520677	AM-iPS-20 (Lovage)	8
+GSM520678	AM-iPS-20 (Lovage)	9
+GSM520679	AM-iPS-20 (Lovage)	9
+GSM520674	AM-iPS-20 (Lovage)	12
+GSM520675	AM-iPS-20 (Lovage)	12
+GSM520676	AM-iPS-20 (Lovage)	12
+GSM520686	AM-iPS-8 (Thyme)	16
+GSM520687	AM-iPS-8 (Thyme)	16
+GSM520688	AM-iPS-8 (Thyme)	16
+GSM520683	AM-iPS-7 (Marry)	15
+GSM520684	AM-iPS-7 (Marry)	15
+GSM520685	AM-iPS-7 (Marry)	15
+GSM520708	AM-iPS-7 (Marry)	19
+GSM520706	AM-iPS-7 (Marry)	20
+GSM520707	AM-iPS-7 (Marry)	20
