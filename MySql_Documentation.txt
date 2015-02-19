@@ -1,0 +1,55 @@
+CREATE TABLE Gene(
+Gene_ID integer not null primary key,
+Gene_Accession varchar(10) not null,
+Gene_Descript varchar(256) );
+/*
+This will produce a table in MySQL called 'Gene' with the feilds Gene_ID, Gene_Accesion and Gene_Descript.
+The feild Gene_ID is an integer, must contain a value and is the primary key within this table.
+Gene_Accesion  must contain a vaule that is a varible combination of letters and numbers of roughly 10 characters.
+Gene_Descript is a description of where the two previous feild's were accertained.     
+*/ 
+LOAD DATA LOCAL INFILE 'genes.txt' INTO TABLE Gene (Gene_ID,Gene_Accession,Gene_Descript);
+#'LOAD DATA LOCAL INFILE' function inputs data from a file (called 'genes.txt') into my table (Gene). 
+
+CREATE TABLE Probes(
+ID_REF varchar(10) not null primary key,
+Gene_ID integer not null,
+FOREIGN KEY(Gene_ID)REFERENCES Gene(Gene_ID));
+/*
+This will produce a table in MySQL called 'Probe' with the feilds Gene_ID, ID_REF.
+The feild Gene_ID is an integer, and is the same vaule as located in the 'Gene' Table.
+The feild ID_REF located in this table is the primary key and is composed of 10 charecters.
+'FOREIGN KEY function allows the linking of the two tables 'gene' and 'probe' using the feild Gene_ID. 
+*/
+LOAD DATA LOCAL INFILE 'probes.txt' INTO TABLE Probes (ID_REF,Gene_ID);
+#'LOAD DATA LOCAL INFILE' function inputs data from a file (called 'Probes.txt') into my table (Probe).
+
+CREATE TABLE  expression(
+Sample_ID varchar(10) Primary Key, 
+ID_REF varchar(10) not null,
+FOREIGN KEY (ID_REF)REFERENCES expression(Sample_ID,ID_REF,Expression),
+Expression varchar(256));
+/*
+This will produce a table in MySQL called 'expression' with the feilds Sample_ID, ID_REF, Expression.
+The feild ID_REF is the same vaule as located in the 'Probe' Table.
+Sample_ID contains varible charecters and is the primary key.
+Expression has a maximum of roughly 256 charecters.
+'FOREIGN KEY function allows the linking of the two tables 'expression' and 'probe' using the feild ID_REF.
+*/
+LOAD DATA LOCAL INFILE 'expression.txt' INTO TABLE (Sample_ID,ID_REF,Expression);
+#'LOAD DATA LOCAL INFILE' function inputs data from a file (called 'expression.txt') into my table (expression).
+
+CREATE TABLE Sample(
+Sample_ID varchar(256) primary key,
+FOREIGN KEY (Sample_ID) REFERENCES expression(Sample_ID)
+Subset varchar(10),
+Subject_Num varchar(256));
+/*
+This will produce a table in MySQL called 'Sample' with the feilds Sample_ID,Subset and Subject_Num.
+The feild Sample_ID is the same vaule as located in the 'expression' Table.
+Subset has roughly 10 varible charecters,
+Subject_Num has anything up to 256 charecters
+'FOREIGN KEY function allows the linking of the two tables 'expression' and 'Sample' using the feild Sample_ID.
+*/
+LOAD DATA LOCAL INFILE 'samples.txt' INTO TABLE (Sampel_ID,subset,Subject_Num);
+#'LOAD DATA LOCAL INFILE' function inputs data from a file (called 'Sample.txt') into my table (Sample).
