@@ -1,6 +1,6 @@
 #!/usr/bin/python
 # -*- coding: iso-8859-1 -*-
-chmod +x testscript.py
+
 import cgi
 import cgitb
 cgitb.enable()
