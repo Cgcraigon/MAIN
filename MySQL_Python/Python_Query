@@ -1,0 +1,8 @@
+#!/usr/bin/python
+# -*- coding: iso-8859-1 -*-
+import MySQldb
+db=MySQldb.connect(db="cgcraigon",user="cgcraigon",passwd="sFv9iwKj")
+cursor=db.cursor()
+cursor.execute()
+result=cursor.fetchall()
+print result
