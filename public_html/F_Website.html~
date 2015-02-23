@@ -14,7 +14,7 @@ body{color:#080808; font-family: "times new roman"; text-align: center}
      <p> based off of a Geo dataset expressing Gene expression values for trascriptional</p> 
        <p>activated plueirpotent stem cells. </p>
 <form action="/~cgcraigon/cgi-bin/testscript.py" method=GET>
-   <input type=text name=title size=40 value='Enter Gene_ID'/>
+   <input type=text name=title size=40 value='Gene_ID'/>
    <input type="Submit" value="Go"/>
 </form>
   </body>

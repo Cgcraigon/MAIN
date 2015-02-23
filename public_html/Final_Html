@@ -13,8 +13,8 @@ body{color:#080808; font-family: "times new roman"; text-align: center}
  <p>This website is designed to allow a user to input a value and produce results</p>
      <p> based off of a Geo dataset expressing Gene expression values for trascriptional</p> 
        <p>activated plueirpotent stem cells. </p>
-<form action="/~cgcraigon/cgi-bin/testscript.py" method=GET>
-   <input type=text name=title size=40 value='Enter Gene_ID'/>
+<form  method=POST action="/~cgcraigon/project/MAIN/MySQL_Python/testscript.py">
+   <input type=text name=title size=40 value='Gene_ID'/>
    <input type="Submit" value="Go"/>
 </form>
   </body>
