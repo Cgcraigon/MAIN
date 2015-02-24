@@ -1,23 +1,18 @@
 #!/usr/bin/python
 # -*- coding: iso-8859-1 -*-
+chmod +x test1.py
 
 import cgi
 import cgitb
 import os
-import models.py
-Gene = models.Gene([query])
-
-/*
 from mod_python import apache 
 module = apache.import_module('models.py', path =[directory])
-Gene = models.Gene([query])
-*/ 
 
 cgitb.enable()
 
 form = cgi.FieldStorage()
 
-
+Gene = models.Gene([query])
 print "Content-Type: text/html"     # HTML is following
 print                               # blank line, end of headers
 print "<html><head><TITLE>CGI script output</TITLE></head>"
