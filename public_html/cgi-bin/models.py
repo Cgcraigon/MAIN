@@ -31,7 +31,7 @@ class Gene():
 	self.gene_id=geneid
         db=DBHandler()
 	cursor=db.cursor()
-	sql='select gene_title, gene_symbol from gene where gene_id=%s'
+	sql='SELECT gene_title, gene_symbol  from gene where gene_id=%s'
 	cursor.execute(sql,(geneid,))
 	    #query database
 	    #get result and populate the class fields.
@@ -39,13 +39,18 @@ class Gene():
 	self.gene_title	=result[0]
         self.gene_symbol=result[1]
         #now fetch the probes..
-        probesql='select probeid from probe where geneid=%s'
-	#fill in the blanks yourself
+        probesql='SELECT probeid from probe where geneid=%s'
+        cursor.execute(probesql,(geneid,))
+
 
 
 	for result in cursor.fetchall():
+		print '%s'%result
   	    self.probelist.append(result[0])
-
     def get_expression(self,experiment):
+    	db=DBHandler()
+    	cursor=db.cursor()
+    	sql='SELECT expression where ID_REF=%s AND Sample_ID=%s'
+    	print("Complete")
 		'''Retrieve expression values for a given experiment for this gene'''
 		#TODO
