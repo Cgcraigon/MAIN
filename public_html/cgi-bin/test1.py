@@ -3,6 +3,16 @@
 
 import cgi
 import cgitb
+import os
+import models.py
+Gene = models.Gene([query])
+
+/*
+from mod_python import apache 
+module = apache.import_module('models.py', path =[directory])
+Gene = models.Gene([query])
+*/ 
+
 cgitb.enable()
 
 form = cgi.FieldStorage()
