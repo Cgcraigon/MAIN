@@ -41,4 +41,13 @@ class Gene():
         for result in cursor.fetchall():
 		print '%s'%result
         self.probelist.append(result[0])
-    
+        # we must define another function to access the expression vaules from my table. the function below does this.
+     def get_expression(self,Sample_ID);
+        db=DBHandler()
+        cursor=db.cursor 
+        sql='select Expression from expression where ID_Ref=%s and Sample_ID=%s'
+        self.Sample_ID=Sample_ID
+        exvals=[]
+        cursor.execute(sql,(Sample_ID))
+        exvals.aqppend(cursor.fetchone()[0])
+        return exvals
