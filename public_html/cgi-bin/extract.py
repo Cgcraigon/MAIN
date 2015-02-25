@@ -1,18 +1,10 @@
 #!/usr/bin/python
 # -*- coding: iso-8859-1 -*-
-#chmod +x CGI.py
 #Imports cgi modules 
 import cgi
 import cgitb#
 #imports models.py 
 import models
-#Imports os module required for use with apache. 
-#import os
-#imports apache 
-#from mod_python import apache 
-# links the CGI.py with the models.py for importing information the website. 
-#dirctory = os.path.dirname(__models.py__)
-#module = apache.import_module('models.py', path=[directory])
 cgitb.enable()
 form = cgi.FeildStorage()
 #creates a form where the output can be stored.
