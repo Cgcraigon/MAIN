@@ -3,7 +3,8 @@
 #chmod +x CGI.py
 #Imports cgi modules 
 import cgi
-import cgitb
+import cgitb#
+#imports models.py 
 import models
 #Imports os module required for use with apache. 
 #import os
