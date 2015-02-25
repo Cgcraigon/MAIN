@@ -1,43 +1,44 @@
 # -*- coding: iso-8859-1 -*-
 '''Classes to represent our gene expression objects'''
-
+#Imports the MySQL module.
 import MySQLdb
-#Incomplete outline script for a database interacting class to represent a gene.
-
+# a class that allows me to store my MySQL information so that the script can do its function. 
 class DBHandler():
     '''The static database connection - avoids overuse of resources'''
     connection=None
     dbname='cgcraigon'
     dbuser='cgcraigon'
     dbpassword='sFv9iwKj'
+    # Defining a function that will log into MySQL when the script is being executed - uses information from class DBHandler above.
     def __init__(self):
         if DBHandler.connection == None:
             DBHandler.connection = MySQLdb.connect(db=DBHandler.dbname,user=DBHandler.dbuser, passwd=DBHandler.dbpassword)
-    
     def cursor(self):
 	return DBHandler.connection.cursor()
-
+# This class will store output from the query done on MySQL
 class Gene():
-    gene_symbol=''
     gene_title=''
+    gene_symbol=''
     gene_id=''
     probelist=[]
+    # this function runs a query search to MySQL.
     def __init__(self,geneid):
-	self.gene_id=geneid
+    	#logs into MySQL
         db=DBHandler()
 	cursor=db.cursor()
+	# the query search that will be posed to MySQL
 	sql='SELECT gene_title, gene_symbol  from gene where gene_id=%s'
+	self.gene_id=geneid
 	cursor.execute(sql,(geneid,))    
+	#retrieves results and then fills the class feilds.
 	result=cursor.fetchone()
 	self.gene_title	=result[0]
         self.gene_symbol=result[1]
+        # now searching for the probes 
         probesql='SELECT probeid from probe where geneid=%s'
         cursor.execute(probesql,(geneid,))
+        # fills the probes list 
         for result in cursor.fetchall():
 		print '%s'%result
         self.probelist.append(result[0])
-    def get_expression(self,experiment):
-    	db=DBHandler()
-    	cursor=db.cursor()
-    	sql='SELECT expression where ID_REF=%s AND Sample_ID=%s'
-    	print("Complete")
+    
