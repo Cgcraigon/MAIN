@@ -1,7 +1,0 @@
-This is for things that pop into my head. 
-1. Parser could be updated to include headers for the tab delimited values.
-2. Mysql tables could contain additional feilds to give more information about the expression values - would mean altering the parser.
-3. Perhaps the cgi form could could do some simple graphical processing of the data using R ~ maybe.
-4. Given more time could have the information produced from CGI to be stored in a txt format, that would allow the user to download the information. 
-5. Perhaps it could be given more information from multiple GEO sets allowing for further experimental anaylsis. 
-6. Have a link on the website containg the original Geo.soft file "Might actually do this, if Dr Martin says yes" 
