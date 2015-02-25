@@ -17,9 +17,9 @@ class DBHandler():
 	return DBHandler.connection.cursor()
 # This class will store output from the query done on MySQL
 class Gene():
-    gene_title=''
-    gene_symbol=''
-    gene_id=''
+    Gene_ID=''
+    Gene_Accession=''
+    Gene_Descript=''
     probelist=[]
     # this function runs a query search to MySQL.
     def __init__(self,geneid):
@@ -27,7 +27,7 @@ class Gene():
         db=DBHandler()
 	cursor=db.cursor()
 	# the query search that will be posed to MySQL
-	sql='SELECT gene_title, gene_symbol  from gene where gene_id=%s'
+	sql='SELECT Gene_Accession, Gene_Descript from Gene where Gene_ID=%s'
 	self.gene_id=geneid
 	cursor.execute(sql,(geneid,))    
 	#retrieves results and then fills the class feilds.
@@ -35,7 +35,7 @@ class Gene():
 	self.gene_title	=result[0]
         self.gene_symbol=result[1]
         # now searching for the probes 
-        probesql='SELECT probeid from probe where geneid=%s'
+        probesql='SELECT ID_REF from Probes where Gene_ID=%s'
         cursor.execute(probesql,(geneid,))
         # fills the probes list 
         for result in cursor.fetchall():
