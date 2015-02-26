@@ -27,7 +27,7 @@ LOAD DATA LOCAL INFILE 'probes.txt' INTO TABLE Probes (ID_REF,Gene_ID);
 CREATE TABLE  expression(
 Sample_ID varchar(10) Primary Key, 
 ID_REF varchar(10) not null,
-FOREIGN KEY (ID_REF)REFERENCES expression(Sample_ID,ID_REF,Expression),
+FOREIGN KEY (ID_REF)REFERENCES Probes (ID_REF),
 Expression varchar(256));
 /*
 This will produce a table in MySQL called 'expression' with the feilds Sample_ID, ID_REF, Expression.
