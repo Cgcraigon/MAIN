@@ -20,6 +20,10 @@ cursor.execute(sql,form[''].value)
 result=cursor.fetchall()
 result
 """Fetches the Results"""
+expsql='SELECT expression from expression where sample_ID=%s and probe_id in %s'
+cursor.execute(expsql,(self.gene_id,)self.probe_id)
+expresult=cursor.fetchall()
+expresults
 print "Content-Type: text/html"     # HTML is following
 print                               # blank line, end of headers
 print "<html><head><TITLE>CGI script Output</TITLE></head>"
@@ -34,4 +38,5 @@ print "<table>"
 print "<b> Gene_Accesion, Gene_Description<b>"
 print result
 print "</body></html>"
+print expresults
 """ Prints the results of the query"""
