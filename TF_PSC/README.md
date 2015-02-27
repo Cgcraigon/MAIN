@@ -1,5 +1,5 @@
 # TF_PSC 
-# Contains information regarding dataset GDS3842 and its parsed text files.
+##Contains information regarding dataset GDS3842 and its parsed text files.
 ###1. GDS3842Full_soft 
 This is the full dataset used for the project BS32011.
 ###2. expression.txt 
