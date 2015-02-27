@@ -24,24 +24,8 @@ The feild ID_REF located in this table is the primary key and is composed of 10 
 LOAD DATA LOCAL INFILE 'probes.txt' INTO TABLE Probes (ID_REF,Gene_ID);
 #'LOAD DATA LOCAL INFILE' function inputs data from a file (called 'Probes.txt') into my table (Probe).
 
-CREATE TABLE  expression(
-Sample_ID varchar(256) Primary Key, 
-ID_REF varchar(256) not null,
-FOREIGN KEY (ID_REF)REFERENCES Probes(ID_REF),
-Expression varchar(256));
-/*
-This will produce a table in MySQL called 'expression' with the feilds Sample_ID, ID_REF, Expression.
-The feild ID_REF is the same vaule as located in the 'Probe' Table.
-Sample_ID contains varible charecters and is the primary key.
-Expression has a maximum of roughly 256 charecters.
-'FOREIGN KEY function allows the linking of the two tables 'expression' and 'probe' using the feild ID_REF.
-*/
-LOAD DATA LOCAL INFILE 'expression.txt' INTO TABLE expression (Sample_ID,ID_REF,Expression);
-#'LOAD DATA LOCAL INFILE' function inputs data from a file (called 'expression.txt') into my table (expression).
-
 CREATE TABLE Sample(
 Sample_ID varchar(256) primary key,
-FOREIGN KEY (Sample_ID) REFERENCES expression(Sample_ID)
 Subset varchar(10),
 Subject_Num varchar(256));
 /*
@@ -53,3 +37,18 @@ Subject_Num has anything up to 256 charecters
 */
 LOAD DATA LOCAL INFILE 'samples.txt' INTO TABLE (Sampel_ID,subset,Subject_Num);
 #'LOAD DATA LOCAL INFILE' function inputs data from a file (called 'Sample.txt') into my table (Sample).
+CREATE TABLE  expression(
+Sample_ID varchar(256) Primary Key, 
+FOREIGN KEY (Sample_ID) REFERENCES expression(Sample_ID)
+ID_REF varchar(256) not null,
+FOREIGN KEY (ID_REF)REFERENCES Probes(ID_REF),
+Expression_Values varchar(256));
+/*
+This will produce a table in MySQL called 'expression' with the feilds Sample_ID, ID_REF, Expression.
+The feild ID_REF is the same vaule as located in the 'Probe' Table.
+Sample_ID contains varible charecters and is the primary key.
+Expression has a maximum of roughly 256 charecters.
+'FOREIGN KEY function allows the linking of the two tables 'expression' and 'probe' and 'Expression' and 'Sample' using the feild ID_REF.
+*/
+LOAD DATA LOCAL INFILE 'expression.txt' INTO TABLE expression (Sample_ID,ID_REF,Expression);
+#'LOAD DATA LOCAL INFILE' function inputs data from a file (called 'expression.txt') into my table (expression).
