@@ -1,8 +1,12 @@
 #!/usr/bin/python
 # -*- coding: iso-8859-1 -*-
 import MySQldb
+"""imports MySQLdb"""
 db=MySQldb.connect(db="cgcraigon",user="cgcraigon",passwd="sFv9iwKj")
 cursor=db.cursor()
 cursor.execute()
+""" Makes a connection to the MySQL database""" 
 result=cursor.fetchall()
+"""Asking to fetch results"""
 print result
+"""Prints those results"""
