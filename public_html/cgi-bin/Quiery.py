@@ -1,2 +1,0 @@
-SELECT sum (Expression_Value)/count(Expression_Value) as average, Gene.Gene_Accesion, Expression_Value.Sample_ID from Expression  inner join Probe on Expression.ID_REF=Probe.ID_REF inner join Gene  on Gene.Gene_ID=Probe.Gene_ID inner join Samples on Samples.Subset =Expression .Sample_ID where Gene_ID=%s'
-""" This query can be used to produce the average expression of a gene for all of its samples  - the gene was placed in a webform that has been placed in web form '%s' 
