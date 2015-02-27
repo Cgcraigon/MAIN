@@ -1,6 +1,8 @@
 # CGI-BIN
 ##Contents
-###1.Extract.py
+###1.Query.txt
+Contains a text file with a qeury for average expression of a gene for  all of its samples. 
+###2.Extract.py
 Contains the amalgimation of models.py and cgi script. 
 ###2.models.py 
 fully commented. older version of extract.py
