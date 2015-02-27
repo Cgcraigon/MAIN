@@ -2,21 +2,26 @@
 <html>
   <head>
 <title>BS32011 Website</title>
+<!-- This is the Title-->
   </head>
 <style>
 body{color:#0000000; font-family: "times new roman"; text-align: center}
 </style>
+<!-- i am specifiying that the colour of the ink should be black, in new times roman font and aligned to the centre-->
   <body bgcolor="8D8DFF">
+  <!-- i am asking it to produce a beige background-->
    <h1 style="color:#080808; font-weight:400"><font size="6"> Gene Expression Data of Transcription Factor-Induced Pluripotent Stem Cells</font> </h1>
 <h2><b><font size="4"></font></b></h2>
 <h3><i><font size="3"></font></i></h3>
+<!-- this is information relating to the title -->
  <p>This website is designed to allow a user to input a gene from the species <i>Homosapiens</i>  and produce expression results </p>
      <p> based off of the Gene Expression Omnibus dataset GDS3842 expressing expression values for 5 diffrent type of cell having undergone </p> 
-       <p>trascription factor driven reversion into plueripotent stem cells. </p>
+       <p>trascription factor driven reversion into plueripotent stem cells. </p>#
+       <!--this is a paragraph of text-->
 <form action="/~cgcraigon/cgi-bin/extract.py" method=GET>
    <input type=text name=title size=40 value='Enter Gene_ID'/>
    <input type="Submit" value="Go"/>
-   
+   <!-- this is my form text box and submission button-->
 </form>
   </body>
 </html>
