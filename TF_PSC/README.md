@@ -1,8 +1,11 @@
 # TF_PSC 
 ##Contains information regarding dataset GDS3842 and its parsed text files.
-###1. GDS3842Full_soft 
+###1.Complete_Parser.py
+This is the file used to seperate the dataset. 
+###2.GDS3842Full_soft 
 This is the full dataset used for the project BS32011.
-###2. expression.txt 
+###3.
+###4.expression.txt 
 Contains expression information to be feed into MySQL.
 ###3. genes.txt
 Contains gene information to be feed into MySQL.
