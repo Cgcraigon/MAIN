@@ -20,7 +20,7 @@ cursor.execute(sql,form[''].value)
 result=cursor.fetchall()
 result
 """Fetches the Results"""
-expsql='SELECT Expression_Value from Expression where Sample_ID=%s and ID_REF in %s'
+expsql='SELECT Expression_Value from Expression where Sample_ID=%s and ID_REF=%s'
 cursor.execute(expsql,(self.GENE_ID,)self.ID_REF)
 expresult=cursor.fetchall()
 expresults
