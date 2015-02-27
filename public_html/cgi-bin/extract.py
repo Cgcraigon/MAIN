@@ -20,8 +20,8 @@ cursor.execute(sql,form[''].value)
 result=cursor.fetchall()
 result
 """Fetches the Results"""
-expsql='SELECT expression from expression where sample_ID=%s and probe_id in %s'
-cursor.execute(expsql,(self.gene_id,)self.probe_id)
+expsql='SELECT Expression_Value from Expression where Sample_ID=%s and ID_REF in %s'
+cursor.execute(expsql,(self.GENE_ID,)self.ID_REF)
 expresult=cursor.fetchall()
 expresults
 print "Content-Type: text/html"     # HTML is following
