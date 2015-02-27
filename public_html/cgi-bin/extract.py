@@ -20,10 +20,10 @@ cursor.execute(sql,form[''].value)
 result=cursor.fetchall()
 result
 """Fetches the Results"""
-expsql='SELECT Expression_Value from Expression where Sample_ID=%s and ID_REF=%s'
-cursor.execute(expsql,(self.GENE_ID,)self.ID_REF)
-expresult=cursor.fetchall()
-expresults
+expressionsql='SELECT Expression_Value from Expression where Sample_ID=%s and ID_REF=%s'
+cursor.execute(expressionsql,(self.GENE_ID,)self.ID_REF)
+expressionresult=cursor.fetchall()
+expressionresults
 """executes the sql search, for expression"""
 print "Content-Type: text/html"     # HTML is following
 print                               # blank line, end of headers
