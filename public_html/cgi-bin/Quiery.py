@@ -1,7 +1,7 @@
 #!/usr/bin/python
-sql= SELECT Gene_Accession,Gene_Descript,AVG(Expression_Value),Expression_Value, Sample_ID from Expression 
+sql="SELECT Gene_Accession,Gene_Descript,AVG(Expression_Value),Expression_Value, Sample_ID from Expression 
 INNER JOIN Probes on Expression.ID_REF=Probes.ID_REF INNER JOIN Gene on Gene.Gene_ID=Probes.Gene_ID 
-INNER JOIN Samples on Sample.Sample_ID=Expression.Sample_ID where Gene_ID=%s'
+INNER JOIN Samples on Sample.Sample_ID=Expression.Sample_ID where Gene_ID=%s"
 """ This query can be used to produce the average expression of a gene for all of its samples  - 
 the gene was placed in a webform that has been placed in web form '%s'""" 
 sql="SELECT Gene_Accesion, Gene_Descript FROM Gene where Gene_ID=%s"
