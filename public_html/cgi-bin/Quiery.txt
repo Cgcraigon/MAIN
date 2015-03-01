@@ -4,5 +4,5 @@ INNER JOIN Probes on Expression.ID_REF=Probes.ID_REF INNER JOIN Gene on Gene.Gen
 INNER JOIN Samples on Sample.Sample_ID=Expression.Sample_ID where Gene_ID=%s"
 """ This query can be used to produce the average expression of a gene for all of its samples  - 
 the gene was placed in a webform that has been placed in web form '%s'""" 
-sql="SELECT Gene_Accesion, Gene_Descript FROM Gene where Gene_ID=%s"
-expressionsql='SELECT Expression_Value from Expression where Gene_ID=%s'
+sql="SELECT Gene_Accesion, Gene_Descript from Gene where Gene_ID=%s"
+expressionsql="SELECT Expression_Value from Expression where Gene_ID=%s"
