@@ -20,7 +20,9 @@ cursor.execute(sql,form[''].value)
 result=cursor.fetchall()
 result
 """Fetches the Results"""
-expressionsql='SELECT Expression_Value from Expression where Gene_ID=%s'
+expressionsql="SELECT Expression_Value from Expression INNER JOIN \
+Probes on Expression.ID_REF=Probes.ID_REF INNER JOIN Gene on Gene.Gene_ID=Probes.Gene_ID where Gene_ID=%s" 
+ where Gene_ID=%s'
 cursor.execute(expressionsql,(self.GENE_ID,))
 expressionresult=cursor.fetchall()
 expressionresults
