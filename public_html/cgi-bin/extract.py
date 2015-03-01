@@ -20,8 +20,8 @@ cursor.execute(sql,form[''].value)
 result=cursor.fetchall()
 result
 """Fetches the Results"""
-expressionsql='SELECT Expression_Value from Expression where Sample_ID=%s and ID_REF=%s'
-cursor.execute(expressionsql,(self.GENE_ID,)self.ID_REF)
+expressionsql='SELECT Expression_Value from Expression where Gene_ID=%s'
+cursor.execute(expressionsql,(self.GENE_ID,))
 expressionresult=cursor.fetchall()
 expressionresults
 """executes the sql search, for expression"""
