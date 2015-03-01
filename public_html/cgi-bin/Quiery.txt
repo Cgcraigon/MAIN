@@ -5,4 +5,4 @@ inner join Samples on Samples.Subset =Expression .Sample_ID where Gene_ID=%s'
 """ This query can be used to produce the average expression of a gene for all of its samples  - 
 the gene was placed in a webform that has been placed in web form '%s'""" 
 sql="SELECT Gene_Accesion, Gene_Descript FROM Gene where Gene_ID=%s"
-expressionsql='SELECT Expression_Value from Expression where Sample_ID=%s and ID_REF=%s'
+expressionsql='SELECT Expression_Value from Expression where Gene_ID=%s'
