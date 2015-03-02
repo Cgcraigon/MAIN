@@ -1,9 +1,9 @@
 CREATE TABLE Gene(
-Gene_ID varchar(256) not null primary key,
-Gene_Accession varchar(10) not null,
-Gene_Descript varchar(256) );
+GENE_ID varchar(12) not null primary key,
+Gene_Accession varchar(12) not null,
+Gene_Descript varchar(256) not null );
 /*
-This will produce a table in MySQL called 'Gene' with the feilds Gene_ID, Gene_Accesion and Gene_Descript.
+This will produce a table in MySQL called 'Gene' with the feilds GENE_ID, Gene_Accesion and Gene_Descript.
 The feild Gene_ID is an varible charecter, must contain a value and is the primary key within this table.
 Gene_Accesion  must contain a vaule that is a varible combination of letters and numbers of roughly 10 characters.
 Gene_Descript is a description of where the two previous feild's were accertained.     
@@ -11,18 +11,18 @@ Gene_Descript is a description of where the two previous feild's were accertaine
 LOAD DATA LOCAL INFILE 'genes.txt' INTO TABLE Gene (Gene_ID,Gene_Accession,Gene_Descript);
 #'LOAD DATA LOCAL INFILE' function inputs data from a file (called 'genes.txt') into my table (Gene). 
 
-CREATE TABLE Probes(
+CREATE TABLE PROBES(
 ID_REF varchar(256) not null primary key,
-Gene_ID varchar(256) not null,
+GENE_ID varchar(256) not null,
 FOREIGN KEY(Gene_ID)REFERENCES Gene(Gene_ID));
 /*
-This will produce a table in MySQL called 'Probe' with the feilds Gene_ID, ID_REF.
-The feild Gene_ID is an integer, and is the same vaule as located in the 'Gene' Table.
-The feild ID_REF located in this table is the primary key and is composed of 10 charecters.
+This will produce a table in MySQL called 'Probe' with the feilds GENE_ID, ID_REF.
+The feild Gene_ID  is the same vaule as located in the 'Gene' Table.
+The feild ID_REF located in this table is the primary key and is composed of upto 256 charecters.
 'FOREIGN KEY function allows the linking of the two tables 'gene' and 'probe' using the feild Gene_ID. 
 */
 LOAD DATA LOCAL INFILE 'probes.txt' INTO TABLE Probes (ID_REF,Gene_ID);
-#'LOAD DATA LOCAL INFILE' function inputs data from a file (called 'Probes.txt') into my table (Probe).
+#'LOAD DATA LOCAL INFILE' function inputs data from a file (called 'probes.txt') into my table (PROBES).
 
 CREATE TABLE Sample(
 Sample_ID varchar(256) primary key,
@@ -37,9 +37,10 @@ Subject_Num has anything up to 256 charecters
 */
 LOAD DATA LOCAL INFILE 'samples.txt' INTO TABLE (Sampel_ID,subset,Subject_Num);
 #'LOAD DATA LOCAL INFILE' function inputs data from a file (called 'Sample.txt') into my table (Sample).
+
 CREATE TABLE  expression(
-Sample_ID varchar(256) Primary Key, 
-FOREIGN KEY (Sample_ID) REFERENCES expression(Sample_ID)
+Sample_ID varchar(256) Primary Key not null, 
+FOREIGN KEY (Sample_ID) REFERENCES Sample(Sample_ID)
 ID_REF varchar(256) not null,
 FOREIGN KEY (ID_REF)REFERENCES Probes(ID_REF),
 Expression_Values varchar(256));
@@ -51,4 +52,4 @@ Expression has a maximum of roughly 256 charecters.
 'FOREIGN KEY function allows the linking of the two tables 'expression' and 'probe' and 'Expression' and 'Sample' using the feild ID_REF.
 */
 LOAD DATA LOCAL INFILE 'expression.txt' INTO TABLE expression (Sample_ID,ID_REF,Expression);
-#'LOAD DATA LOCAL INFILE' function inputs data from a file (called 'expression.txt') into my table (expression).
+#'LOAD DATA LOCAL INFILE' function inputs data from a file (called 'expression.txt') into my table (Expression).
