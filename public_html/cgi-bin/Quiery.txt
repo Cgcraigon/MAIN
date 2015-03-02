@@ -6,3 +6,4 @@ on Sample.Sample_ID=Expression.Sample_ID where Gene_ID=%s"
 sql="SELECT Gene_Accesion, Gene_Descript from Gene where Gene_ID=%s"
 expressionsql="SELECT Expression_Value from Expression INNER JOIN \
 Probes on Expression.ID_REF=Probes.ID_REF INNER JOIN Gene on Gene.Gene_ID=Probes.Gene_ID where Gene_ID=%s"
+""" selects the accession, description and expression values for a gene =%s"""
