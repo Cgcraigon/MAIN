@@ -38,7 +38,7 @@ class Gene():
 	self.gene_title	=result[0]
         self.gene_symbol=result[1]
         # now searching for the probes 
-        probesql='select ID_REF from Probes where Gene_ID=%s'
+        probesql='select ID_REF from PROBES where Gene_ID=%s'
         cursor.execute(probesql,(Gene_ID))
         """ fills the probes list """
         for result in cursor.fetchall():
